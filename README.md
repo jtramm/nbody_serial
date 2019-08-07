@@ -8,7 +8,9 @@ MPCS 51087 at the University of Chicago.
 Compilation settings can be configured at the top of the included makefile.
 Settings include turning on/off MPI and OpenMP.
 
+```bash
 $> make
+```
 
 ## Runtime Settings
 
