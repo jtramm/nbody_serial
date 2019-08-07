@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 import mpl_toolkits.mplot3d.axes3d as p3
 
-# Set Endianness. If using a BG/Q Veta binary, set to "True"
+# Set Endianness. If using a BG/Q Vesta big endian binary file, set to "True"
 BigEndian = False
 
 # Input file name
