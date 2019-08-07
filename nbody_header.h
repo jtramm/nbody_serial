@@ -3,7 +3,8 @@
 #include <stdlib.h>
 #include <assert.h>
 #include <string.h>
-#include <time.h>
+#include <unistd.h>
+#include <sys/time.h>
 #ifdef MPI
 #include <mpi.h>
 #endif
@@ -27,11 +28,14 @@ typedef struct {
 // serial.c
 void run_serial_problem(int nBodies, double dt, int nIters, char * fname);
 void randomizeBodies(Body * bodies, int nBodies);
+void randomizeBodies_fun(Body * bodies, int nBodies);
 void compute_forces(Body * bodies, double dt, int nBodies);
 
 // utils.c
 double get_time(void);
 void print_inputs(long nBodies, double dt, int nIters, int nthreads );
+double LCG_random_double(uint64_t * seed);
+uint64_t fast_forward_LCG(uint64_t seed, uint64_t n);
 
 // parallel.c
 #ifdef MPI
