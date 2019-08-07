@@ -30,7 +30,7 @@ $> ./nbody 1000 100 0.2 4
 
 Will simulate 1000 bodies for 100 timesteps each of length 0.2, using 4 OpenMP threads per rank.
 
-**NOTE:** This code has not yet been parallelized, so using more than one OpenMP thread will not have any effect.
+**NOTE:** This code has not yet been parallelized, so using more than one OpenMP thread will not have any effect until you implement hybrid parallelism as part of the assignment.
 
 ## Parallel Framework
 
