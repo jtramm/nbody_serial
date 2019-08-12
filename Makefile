@@ -3,11 +3,11 @@
 #===============================================================================
 
 COMPILER    = gnu
-MPI         = no
 OPTIMIZE    = yes
+MPI         = no
+OPENMP      = no
 DEBUG       = no
 PROFILE     = no
-OPENMP      = no
 
 #===============================================================================
 # Program name & source code list
@@ -47,12 +47,10 @@ endif
 # Debug Flags
 ifeq ($(DEBUG),yes)
   CFLAGS += -g
-  #CFLAGS += -g
 endif
 
 # Profiling Flags
 ifeq ($(PROFILE),yes)
-  #CFLAGS += -pg -O0 -fno-omit-frame-pointer
   CFLAGS += -pg -fno-omit-frame-pointer
 endif
 

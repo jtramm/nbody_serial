@@ -6,7 +6,7 @@ void run_serial_problem(int nBodies, double dt, int nIters, char * fname)
 	FILE * datafile = fopen("nbody.dat","wb");
 	
 	// When we open the this binary file for plotting, we will make some assumptions as to
-	// size of the file. As such, we enforce these assumptions here.
+	// size of data types we are writing. As such, we enforce these assumptions here.
 	assert(sizeof(int)    == 4 );
 	assert(sizeof(double) == 8 );
 
@@ -34,7 +34,7 @@ void run_serial_problem(int nBodies, double dt, int nIters, char * fname)
 	{
 		printf("iteration: %d\n", iter);
 
-		// Pack up body position to contiguous buffer
+		// Pack up body positions to contiguous buffer
 		for( int b = 0, p = 0; b < nBodies; b++ )
 		{
 			positions[p++] = bodies[b].x;
@@ -99,7 +99,7 @@ void randomizeBodies(Body * bodies, int nBodies)
 		// Initialize positions
 		bodies[i].x =  2.0 * LCG_random_double(&particle_seed) - 1.0;
 		bodies[i].y =  2.0 * LCG_random_double(&particle_seed) - 1.0;
-		bodies[i].z = (2.0 * LCG_random_double(&particle_seed) - 1.0) * 0.1;;
+		bodies[i].z = (2.0 * LCG_random_double(&particle_seed) - 1.0) * 0.1;
 
 		// Intialize velocities
 		bodies[i].vx =  2.0 * vm * LCG_random_double(&particle_seed) - vm;
